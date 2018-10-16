@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+body {
+  font-family: "San Francisco";
+}
+
+#titlehead {
+  font-family: "Raleway", sans-serif;
+  color: whitesmoke;
+  font-size: 50px;
+}
+
+.tabs {
+  margin-bottom: -1px !important;
+  position: relative;
+  margin-left: 260px;
+}
+.tab-content {
+  padding: 60px;
+  padding-top: 30px;
+  top: 197px;
+  color: #000;
+  background-color: #eee;
+}
+@media (max-width: 700px) {
+  .tab-content {
+    padding: 0;
+  }
+}
+
+.tab-pane {
+  display: none;
+  width: 80%;
+}
+.tab-pane.is-active {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 900px) {
+  .tab-pane.is-active {
+    width: 100%;
+  }
+}
+.is-active {
+  display: initial;
+}
+
+.cent {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.video {
+  display: block;
+  margin: 0 auto;
+}
+
+.bootup {
+  padding: 25px;
+  padding-right: 100px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bootup:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.bootup > .file {
+  background-color: white;
+  margin-top: 10px;
+}
+
+.bootup > h1 {
+  color: white;
+}
+
+.sidetile {
+  border-radius: 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.sidetile:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.column {
+  /*background-color: salmon;*/
+}
+
+.control > .input {
+  width: 200px;
+}
+.card label {
+  display: inline-block;
+  padding-top: 10px;
+}
+.tile h1 {
+  display: block;
+  border-bottom: 1.4px solid rgb(73, 73, 73);
+  padding-bottom: 3px;
+  line-height: 1.75em;
+}
+.box {
+  border-radius: 0px;
+}
+
+/********************************
+        FTP TAB - TAB 3 
+*********************************/
+#pane-3 {
+  margin: 0;
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+}
+.grid-container {
+  display: grid;
+  /* width: 100vw; */
+  grid-template-columns: 1fr 1.1fr 0.9fr 1fr;
+  grid-template-rows: 0.4fr 1.9fr 0.7fr;
+  grid-gap: 20px;
+  grid-template-areas:
+    "top top top top"
+    "main main main main"
+    "bot bot bot bot";
+}
+.top {
+  display: grid;
+  grid-area: top;
+  grid-template-columns: 1fr 0.4fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px;
+  grid-template-areas: "top-col1 top-col2";
+}
+.top-col1 {
+  grid-area: top-col1;
+  /* background-color: #e343ff; */
+}
+.top-col2 {
+  grid-area: top-col2;
+}
+.main {
+  display: grid;
+  grid-area: main;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr 1.4fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px;
+  grid-template-areas: "main-col1 main-col2 main-col3 main-col4";
+}
+.main-col1 {
+  grid-area: main-col1;
+  /* background-color: #2196f3; */
+}
+.main-col2 {
+  grid-area: main-col2;
+  /* background-color: #2196f3; */
+}
+.main-col3 {
+  grid-area: main-col3;
+  /* background-color: #2196f3; */
+}
+.main-col4 {
+  grid-area: main-col4;
+  /* background-color: #cddc39; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-auto-rows: 20vw; */
+  grid-auto-flow: dense;
+}
+.bot {
+  display: grid;
+  grid-area: bot;
+  grid-template-columns: 1.2fr 0.7fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px;
+  grid-template-areas: "bot-col1 bot-col2";
+}
+.bot-col1 {
+  grid-area: bot-col1;
+  /* background-color: #795548; */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 1px;
+  grid-template-areas: "bot-col1-col1 bot-col1-col2";
+}
+.bot-col1-col1 {
+  grid-area: bot-col1-col1;
+}
+.bot-col1-col2 {
+  grid-area: bot-col1-col2;
+}
+.bot-col2 {
+  grid-area: bot-col2;
+  /* background-color: #607d8b; */
+}
+.button-groupftp .button {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.playgrid {
+  display: grid;
+  grid-template-rows: 1fr 63px;
+  grid-auto-flow: dense;
+}
+.playcontrols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+.button-group-play .button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.control-ftp {
+  display: flex;
+  flex-direction: column;
+}
+.radio {
+  margin-bottom: 10px;
+}
+.radio + .radio {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.control-ftp * {
+  margin-bottom: 10px;
+}
+.button-top-col2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.button-top-col2 .buttoncol2 {
+  width: 200px;
+}
+
+#slider {
+  margin: 20px;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
+  background-repeat: repeat-x;
+  border-radius: 6px;
+}
+
+.flextest {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal .card-content {
+  padding-bottom: 0;
+}
+.modal .card {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.modal-card-body {
+  padding-left: 0;
+}
+
+/* div[id*="modal-ter-parameter"] .modal-card {
+  width: auto;
+} */
+
+div[id*="modal-ter"] .modal-card {
+  width: auto;
+}
+
+.file {
+  margin-bottom: 15px;
+}
+
+.modal .input {
+  width: 100%;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button !important;
+  opacity: 1;
+  height: auto;
+}
+
+#modal-ter-ftp .grid-container-ftp {
+  border: 1px solid #eee;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 2fr 0.5fr 1.4fr;
+  grid-gap: 5px;
+  grid-template-areas:
+    "top top top top"
+    "main main main main"
+    "sub sub sub sub"
+    "graph graph graph graph";
+}
+
+#modal-ter-ftp .top {
+  grid-area: top;
+  border: 2px solid rgb(209, 209, 209);
+}
+#modal-ter-ftp .main {
+  grid-area: main;
+  border: 2px solid rgb(209, 209, 209);
+}
+#modal-ter-ftp .sub {
+  grid-area: sub;
+  border: 2px solid rgb(209, 209, 209);
+}
+#modal-ter-ftp .graph {
+  grid-area: graph;
+  border: 2px solid rgb(209, 209, 209);
+}
+
+#modal-ter-ftp .ftp-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#modal-ter-ftp .ftp-inner {
+  margin-right: 20px;
+}
+
+#modal-ter-ftp .ftp-inner ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: initial;
+}
+
+#modal-ter-ftp .ftp-inner ul li {
+  margin: 15px;
+}
+
+#grid-container-udp * {
+  margin-bottom: 15px;
+}
+
+.imgcont {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgcont:hover {
+  transform: scale(1.3);
+}
+
+.grid-container-checker {
+  display: grid;
+
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:
+    "top top"
+    "col1 col2";
+  grid-gap: 30px;
+  margin: 20px;
+}
+
+#modal-ter-checker .top {
+  grid-area: top;
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#modal-ter-checker .col1 {
+  grid-area: col1;
+}
+
+#modal-ter-checker .col2 {
+  grid-area: col2;
+}
+
+.mainFooter {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 149, 255);
+  -webkit-box-shadow: 0px 6px 103px -7px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 0px 6px 103px -7px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.78);
+}
+
+.mainFooter .footerContainer {
+  padding-left: 250px;
+  padding-right: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

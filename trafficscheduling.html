@@ -1,0 +1,109 @@
+<!<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
+    <link rel='stylesheet' href='https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css'>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/trafficscheduling.css" />
+
+</head>
+
+
+<body onload="startTime(), hideDiv()">
+    <nav class="navbar">
+        <div class="container">
+            <div class="titlehead">
+                <a href="dashboard.html">
+                    <div class="titletext" id="text">ATMI-TECH EPG ADS</div>
+                </a>
+            </div>
+            <div class="navinfo">
+                <div class="date" id="txt" style="font-weight: 500; font-size: 20px;"></div>
+                <div class="username" id="text">Hello, Username</div>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="grid-container">
+            <div class="side">
+                <div class="box1 firstBox">
+                    <button class="tablink has-text-centered" onclick="openDiv(event, 'createTo')">Create TO</button>
+                    <button class="tablink has-text-centered" onclick="openDiv(event, 'toStatus')">TO Status</button>
+                </div>
+                <div class="box1 secondBox">
+                    <button class="tablink has-text-centered" onclick="openDiv(event, 'toList')">TO List</button>
+                    <button class="tablink has-text-centered" onclick="openDiv(event, 'bookSpot')">Book Commercial Spot</button>
+                </div>
+                <div class="box1 calendarBox">
+                    <button class="tablink has-text-centered" onclick="openDiv(event, 'calendar')">Calendar</button>
+
+                </div>
+            </div>
+            <div class="main">
+                <div id="tempDiv" class="tabcontent">
+                    lorem
+                </div>
+                <div id="createTo" class="tabcontent">
+                    CREATE TO
+                </div>
+                <div id="toStatus" class="tabcontent">
+                    TO STATUS
+                </div>
+
+
+
+                <div id="toList" class="tabcontent">
+                    TO LIST
+                </div>
+                <div id="bookSpot" class="tabcontent">
+                    BOOK COMMERCIAL SPOT
+                </div>
+
+
+
+
+                <div id="calendar" class="tabcontent">
+                    CALENDAR
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <img src="images/cignal-small.png">
+            <img src="images/support.png">
+        </div>
+    </footer>
+
+    <noscript>
+        <style type="text/css">
+            section,
+            .navbar,
+            footer {
+                display: none;
+            }
+        </style>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <p>Enable javascript!</p>
+        </div>
+    </noscript>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="https://bulma.io/vendor/clipboard-1.7.1.min.js"></script>
+    <script src="https://bulma.io/vendor/js.cookie-2.1.4.min.js"></script>
+    <script src="https://bulma.io/lib/main.js?v=201809051344"></script>
+    <script src="js/trafficscheduling/trafficscheduling.js"></script>
+</body>
+
+</html>

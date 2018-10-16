@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
+  <link rel='stylesheet' href='https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css'>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fullcalendar.print.min.css" media="print">
+  <link rel="stylesheet" href="css/scheduler.min.css">
+  <link rel="stylesheet" type="text/css" href="css/calendar.css">
+</head>
+
+<body onload="startTime()">
+  <nav class="navbar">
+    <div class="container">
+      <div class="titlehead">
+        <a href="dashboard.html">
+          <div class="titletext" id="text">ATMI-TECH EPG ADS</div>
+        </a>
+      </div>
+      <div class="navinfo">
+        <div class="date" id="txt" style="font-weight: 500; font-size: 20px;"></div>
+        <div class="username" id="text">Hello, Username</div>
+      </div>
+    </div>
+  </nav>
+
+  <section>
+    <div id="calendar" class="calendarStyle"></div>
+
+    <!-- modal -->
+    <div id="dateModal" class="date-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Ad Details</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="modal-zone"></div>
+          <div id="modal-title"></div>
+          <div id="modal-start"></div>
+          <div id="modal-end"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <img src="images/cignal-small.png">
+      <img src="images/support.png">
+    </div>
+  </footer>
+
+  <script src="js/calendar/moment.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+  <script src="js/calendar/scheduler.min.js"></script>
+  <script src="js/calendar/calendar.js"></script>
+  <script src="js/time.js"></script>
+  <script src="https://bulma.io/vendor/clipboard-1.7.1.min.js"></script>
+  <script src="https://bulma.io/vendor/js.cookie-2.1.4.min.js"></script>
+  <script src="https://bulma.io/lib/main.js?v=201809051344"></script>
+
+  <script>
+    // $(document).ready(function () {
+    //   // $(".container").click(function () {
+
+    //   //   alert($(this.id));
+    //   //   alert("s");
+    //   // });
+    //   // $(".fc-event").click(function () {
+    //   //   alert("asd");
+    //   // });
+    //   $("#calendar").on("click", "a.fc-event", () => {
+    //     alert("asd");
+    //   });
+    // });
+  </script>
+</body>
+
+</html>

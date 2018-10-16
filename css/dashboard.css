@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #eee;
+}
+
+/* .grid-container * {
+  border: 1px solid #ccc;
+} */
+
+#txt {
+  font-family: "Montserrat", sans-serif;
+  color: whitesmoke;
+}
+#text {
+  font-family: "Raleway", sans-serif;
+  color: whitesmoke;
+}
+
+#logo {
+  object-fit: scale-down;
+}
+
+#support {
+  padding-top: 0;
+  margin-top: 0;
+  float: right;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 150px;
+  background-color: rgb(0, 149, 255);
+  -webkit-box-shadow: 0px 6px 103px -7px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: 0px 6px 103px -7px rgba(0, 0, 0, 0.78);
+  box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.78);
+}
+
+.navbar > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titlehead {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titletext {
+  font-size: 40px;
+}
+.navinfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr;
+  grid-gap: 1px 1px;
+  grid-template-areas:
+    "navbar"
+    "main";
+}
+.navbar {
+  background-color: rgb(0, 149, 255);
+  grid-area: navbar;
+}
+.main {
+  grid-area: main;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 100px;
+  grid-gap: 50px;
+}
+
+@media (max-width: 500px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    grid-gap: 50px;
+  }
+}
+
+@media (max-height: 900px) {
+  .main {
+    margin-top: 40px;
+    margin-bottom: 150px;
+  }
+}
+
+.box1 {
+  border-radius: 10px;
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.box1:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+a {
+  color: black;
+  background-color: transparent !important;
+}
+
+h3 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 149, 255);
+}
+
+.footer1 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

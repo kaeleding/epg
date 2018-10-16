@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ads Scheduling</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+
+    <link rel="stylesheet" href="css/adscheduling.css">
+
+</head>
+
+<body>
+
+    <!-----------------------------------------------
+        
+        NAV SECTION
+    
+    ------------------------------------------------->
+    <!-- <nav class="navbar is-info">
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start is-link">
+                <a class="navbar-item" href="https://github.com/dansup/bulma-templates">
+                    Home
+                </a>
+                
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/documentation/overview/start/">
+                        Docs
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="admin.html">
+                            Admin
+                        </a>
+                        <a class="navbar-item" href="forum.html">
+                            Forum
+                        </a>
+                        <a class="navbar-item" href="cover.html">
+                            Cover
+                        </a>
+                        <a class="navbar-item" href="cards.html">
+                            Cards
+                        </a>
+                        <a class="navbar-item" href="blog.html">
+                            Blog
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="search.html">
+                            Search
+                        </a>
+                        <a class="navbar-item is-active" href="kanban.html">
+                            Kanban
+                        </a>
+                    </div>
+                      
+            </div>
+        </div>
+        </div>
+    </nav> -->
+
+
+    <!-----------------------------------------------
+        
+        MAIN SECTION
+    
+    ------------------------------------------------->
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+
+                <h1 id="titlehead">
+                    <a href="dashboard.html">
+                        ATMI-TECH EPG ADS
+                    </a>
+                </h1>
+
+                <h2 class="subtitle">
+                    Ad Scheduling
+                </h2>
+            </div>
+        </div>
+        <div class="tabs is-boxed main-menu" id="nav">
+            <ul>
+                <li data-target="pane-1" id="1" class="is-active">
+                    <a>
+                        <span>Edit</span>
+                    </a>
+                </li>
+
+                <li data-target="pane-2" id="2">
+                    <a>
+                        <span>Play</span>
+                    </a>
+                </li>
+
+                <li data-target="pane-3" id="3">
+                    <a class="modal-button" data-target="modal-ter-checker">
+                        <span>FTP</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+
+
+            <!-----------------------------------------------
+        
+        TAB 1 (EDIT)
+    
+    ------------------------------------------------->
+            <div class="tab-pane is-active" id="pane-1" class="level">
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent">
+                        <div class="tile is-child box" style="background-color: #eee;
+                        box-shadow: none;">
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">Boot-Up Screen</h1>
+
+                                <!-- <form id="fileForm" class="form-horizontal" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Avatar</label>
+                                        <div class="col-sm-4">
+                                            <input type="file" class="form-control" name="avatar" />
+                                        </div>
+                                    </div>
+                                </form> -->
+
+                                <!-- <div class="file has-name is-fullwidth is-info is-small">
+                                    <label class="file-label">
+                                        <input type="file" name="resume" id="fileup1">
+                                    </label>
+                                </div> -->
+
+                                <div class="button-group ">
+
+                                    <a class="button is-dark is-fullwidth modal-button" id="bootbutton" data-target="modal-ter-boot"
+                                        style="color: white; ">
+                                        Manage Boot-Up Screen</a>
+
+
+                                    <a class="button modal-button is-danger" id="testbutton" data-target="modal-ter-parameter-bscreen"
+                                        style="display:none; margin-top: 20px;">Broadcast Setup</a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">Channel List</h1>
+                                <!-- <div class="file has-name is-fullwidth is-info is-small">
+                                    <label class="file-label">
+                                        <input type="file" name="resume" id="fileup1">
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-fullwidth is-info is-small">
+                                    <label class="file-label">
+                                        <input type="file" name="resume" id="fileup1">
+
+                                    </label>
+                                </div>
+                                <div class="file has-name is-fullwidth is-info is-small" id="fileupload">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            400 x 200 Image Only
+                                        </span>
+
+                                    </label>
+                                </div> -->
+
+                                <div class="button-group ">
+
+                                    <a class="button is-dark is-fullwidth modal-button" data-target="modal-ter-clist"
+                                        style="color: white; ">
+                                        Manage Channel List</a>
+                                    <a class="button modal-button is-danger" id="testbutton" data-target="modal-ter-parameter-clist"
+                                        style="display:none; margin-top: 20px;">Broadcast Setup</a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">Channel Bar</h1>
+                                <div class="button-group ">
+
+                                    <a class="button is-dark is-fullwidth modal-button" data-target="modal-ter-cbar"
+                                        style="color: white;">
+                                        Manage Channel Bar</a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">Volume Bar</h1>
+                                <div class="button-group ">
+
+                                    <a class="button is-dark is-fullwidth modal-button" data-target="modal-ter-vbar"
+                                        style="color: white; ">
+                                        Manage Volume Bar</a>
+                                    <a class="button modal-button is-danger" id="testbutton" data-target="modal-ter-parameter-vbar"
+                                        style="display:none; margin-top: 20px;">Broadcast Setup</a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">EPG Bar</h1>
+                                <div class="button-group ">
+
+                                    <a class="button is-dark is-fullwidth modal-button" data-target="modal-ter-ebar"
+                                        style="color: white; ">
+                                        Manage EPG Bar</a>
+                                    <a class="button modal-button is-danger" id="testbutton" data-target="modal-ter-parameter-ebar"
+                                        style="display:none; margin-top: 20px;">Broadcast Setup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-4 is-vertical is-parent" style="height: 100%; margin-top: 20px;">
+                        <div class="tile is-child box sidetile">
+                            <!--broadcast button area-->
+                            <div class="button-group">
+                                <h1 class="title" style="color: black;">Options</h1>
+                                <a class="button is-dark modal-button" data-target="modal-ter" style="color: white; margin-bottom: 20px;">Broadcast
+                                    Options</a>
+                            </div>
+                            <!--dropdown area-->
+                            <div class="dropdown">
+                                <div class="volume-dropdown">
+                                    <div class="dropdown">
+                                        <div class="dropdown-trigger">
+                                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                                <span>Set Validity Time</span>
+                                                <span class="icon is-small">
+                                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item">
+                                                    30 days
+                                                </a>
+                                                <a class="dropdown-item">
+                                                    45 days
+                                                </a>
+                                                <a href="#" class="dropdown-item">
+                                                    60 days
+                                                </a>
+                                                <a href="#" class="dropdown-item">
+                                                    90 days
+                                                </a>
+                                                <a href="#" class="dropdown-item">
+                                                    180 days
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons" style="margin-top: 20px;">
+                                <!--preview | save | play-->
+                                <div class="button-group">
+                                    <a class="button is-dark modal-button" data-target="modal-ter" style="color: white;">Preview</a>
+                                    <a class="button is-success">Save</a>
+                                    <a class="button is-danger">Play</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="tile is-child box sidetile">
+
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <!-----------------------------------------------
+        
+        TAB 2 (PLAY)
+    
+    ------------------------------------------------->
+            <!--<div class="tab-pane is-active" id="pane-1" class="level">
+                                <div class="tile is-ancestor">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child box" style="background-color: #eee;
+                                        box-shadow: none;">
+                                            <div class="bootup">
+                                                <h1 class="title" style="color: black;">Boot-Up Screen</h1>
+                                                <div class="file has-name is-fullwidth is-info is-small">
+                                                    <label class="file-label">-->
+            <div class="tab-pane" id="pane-2" style="padding-top: 20px; display: none;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);">
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent">
+                        <div class="tile is-child box">
+                            <h1 class="title" style="color: black;">Ad
+                                Playout</h3>
+                                <div class="columns">
+                                    <div class="column">
+                                        <!--card-->
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title" style="font-size: 25px">
+                                                    Play Space Setting
+                                                </p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <div class="field">
+                                                        <label class="label">AD Control Info</label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                            <label>&nbsp;ms</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">SI Info</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="">
+                                                        <label>&nbsp;ms</label>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">AD DATA Info</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="">
+                                                        <label>&nbsp;ms</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <!--card-->
+                                        <div class="card">
+                                            <header class="card-header">
+                                                <p class="card-header-title" style="font-size: 25px">
+                                                    Output Setting
+                                                </p>
+                                            </header>
+                                            <div class="card-content">
+                                                <div class="content">
+                                                    <div class="field">
+                                                        <label class="label">Output Mode</label>
+                                                        <br>
+                                                        <div class="dropdown">
+                                                            <div class="volume-dropdown">
+                                                                <div class="dropdown">
+                                                                    <div class="dropdown-trigger">
+                                                                        <button class="button" aria-haspopup="true"
+                                                                            aria-controls="dropdown-menu">
+                                                                            <span>File Output</span>
+                                                                            <span class="icon is-small">
+                                                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                                                        <div class="dropdown-content">
+                                                                            <a href="#" class="dropdown-item">
+                                                                                Insert Data
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">Output Code Rate</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="">
+                                                        <label>&nbsp;kbits/s</label>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <label class="label">File Size</label>
+                                                    <div class="control">
+                                                        <input class="input" type="text" placeholder="">
+                                                        <label>&nbsp;MBytes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tile is-child box" style="display: block; box-shadow: none;">
+                                    <div class="buttons is-centered">
+                                        <!--preview | save | play-->
+                                        <div class="button-group">
+                                            <a class="button is-danger">Play</a>
+                                            <a class="button is-dark" style="color: white;">Stop</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-----------------------------------------------
+        
+        TAB 3 (FTP)
+    
+    ------------------------------------------------->
+            <div class="tab-pane" id="pane-3">
+                <div class='grid-container'>
+                    <div class='top'>
+                        <div class='area-overlap top-col1'>
+                            <div class="bootup">
+                                <h1 class="title" style="color: black;">Play</h1>
+                                <div class="file has-name is-fullwidth is-info is-small" style="width: 50%;">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-col2">
+                            <div class="button-group-play button-top-col2">
+                                <a class="button is-dark buttoncol2 modal-button" data-target="modal-ter-ftp">
+                                    <span class="icon has-text-info">
+                                        FTP
+                                    </span></a>
+
+                                <a class="button is-dark buttoncol2 modal-button" data-target="modal-ter-udp">
+                                    <span class="icon has-text-info">
+                                        UDP
+                                    </span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='main' data-color=''>
+                        <div class='area-overlap main-col1'>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        File Information
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='main-col2'>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Program Information
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='main-col3'>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        PID Information
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='main-col4'>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Output Select
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp" checked>
+                                                        DVC
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        SMPTE
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Raw Data
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Hw TP Gen
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" disabled checked>
+                                                        IF and RF
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Bitrate
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="content">
+                                            <div class="control-ftp">
+                                                <label>File: <input class="input" type="text" placeholder="00000000">
+                                                </label>
+                                                <label>RF: <input class="input" type="text" placeholder="18541088">
+                                                </label>
+                                                <a class="button is-dark modal-button" data-target="">
+                                                    Default</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Adaptions
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="content">
+                                            <div class="control-ftp">
+
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    PCR + DTS/PTS
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    TOT/TDT
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    Continuity
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Packet size
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp" disabled checked>
+                                                        188 byte
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp" disabled>
+                                                        188+16 bye
+                                                    </label>
+                                                    <label class="radio" disabled>
+                                                        <input type="radio" name="rsvp" disabled>
+                                                        204 bye
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Options
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="content">
+                                            <div class="control-ftp">
+
+                                                <label class="checkbox">
+                                                    <input type="checkbox" disabled>
+                                                    Burstmode
+                                                </label>
+                                                <label>Size: <input class="input" type="text" placeholder="1" disabled>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Tools
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="content">
+                                            <div class="control-ftp">
+
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    Error insertion
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox">
+                                                    Sub Range
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='bot'>
+                        <div class='area-overlap bot-col1'>
+                            <div class="bot-col1-col1">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            Play controls
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content">
+                                            <div class="playgrid">
+                                                <div class="playcontrols">
+                                                    <div class="play-row1">
+                                                        <div class="button-group-play" style="margin-top: 25px;">
+                                                            <a class="button is-dark modal-button" data-target="">
+                                                                <span class="icon has-text-info">
+                                                                    <i class="fas fa-play"></i>
+                                                                </span></a>
+                                                            <a class="button is-dark modal-button" data-target=""><span
+                                                                    class="icon has-text-info">
+                                                                    <i class="fas fa-pause"></i>
+                                                                </span></a></a>
+                                                            <a class="button is-dark modal-button" data-target=""><span
+                                                                    class="icon has-text-info">
+                                                                    <i class="fas fa-stop"></i>
+                                                                </span></a></a>
+                                                            <a class="button is-dark modal-button" data-target="" style="width: 70px;"><span
+                                                                    class="icon has-text-info">
+                                                                    <i class="fas fa-undo-alt"></i>&nbsp;Loop
+                                                                </span></a> </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="play-row2">
+                                                        <div class="control-ftp" style="margin-top: 25px;">
+
+                                                            <label><input class="input" type="text" placeholder="No errors detected"
+                                                                    disabled>
+                                                            </label>
+                                                            <label>Loop count: <input class="input" type="text"
+                                                                    placeholder="0" disabled>
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="play-row3">
+                                                        <div class="control-ftp">
+
+
+                                                            <label>Ts Time: <input class="input" type="text"
+                                                                    placeholder="0:00:00" disabled>
+                                                            </label>
+                                                            <label>Elasped Time: <input class="input" type="text"
+                                                                    placeholder="0:00:00" disabled>
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="playbar">
+                                                    <div id="slider">
+
+                                                    </div>
+                                                    Seek To : <input id="seekTo" type="text" value="10" />
+                                                    <input id="update" type="button" value="Update" />
+                                                    Current Value : <span id="val">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bot-col1-col2">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            Goodies
+                                        </p>
+
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content">
+                                            <div class="button-groupftp">
+                                                <a class="button is-dark modal-button" data-target="">HexEdit</a>
+                                                <a class="button is-dark modal-button" data-target="">Viewer</a>
+                                                <a class="button is-dark modal-button" data-target="">Ts Analyzer</a>
+                                                <a class="button is-dark modal-button" data-target="">DVP over IP</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='bot-col2'>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Buffer Size
+                                    </p>
+
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+
+
+    <!-----------------------------------------------
+
+        TEST MODAL
+    
+   ------------------------------------------------->
+    <div id="modal-ter" class="modal">
+        <div class="modal-background">
+
+        </div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Broadcast Options</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                    justify-content: center; flex: 0 1 auto;">
+                    test content
+                </div>
+
+                <div class="button-group" style="display: flex;
+                      align-content: center;
+                      justify-content: space-around;">
+                    <button class="button is-success">Save changes</button>
+                    <button class="button">Cancel</button>
+                </div>
+            </section>
+
+
+            <footer class="modal-card-foot" style="display: flex;
+                      align-content: center;
+                      justify-content: center;">
+
+                <button class="button">Close this window</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-----------------------------------------------
+
+        TAB 1(EDIT)
+            BOOTUP SCREEN MODAL
+    
+    ------------------------------------------------->
+    <div id="modal-ter-boot" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Boot-Up Screen</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                    justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <!--  -->
+
+
+                            <div class="card-content">
+                                <div class="field">
+                                    <label class="label">NO</label>
+                                    <div class="control">
+                                        <input class="input" type="number" placeholder="1">
+                                    </div>
+                                </div>
+
+
+                                <label class="label">Picture</label>
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 720 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Model Selecton
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Generate Model
+                                                    </label>
+                                                    <div class="flextest">
+                                                        <label class="radio">
+                                                            <input type="radio" name="rsvp">
+                                                            Special Model
+                                                        </label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                        </div>
+                                                        <button class="button is-dark">Import</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Service ID
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Default Service ID
+                                        </label>
+
+
+                                        <div class="flextest">
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Follow Service ID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                      align-content: center;
+                      justify-content: center;">
+                <button class="button is-success">Ok</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+
+        TAB 1(EDIT)
+            CHANNEL LIST MODAL
+    
+    ------------------------------------------------->
+    <div id="modal-ter-clist" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Channel List</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                            justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <!--  -->
+
+
+                            <div class="card-content">
+                                <div class="field">
+                                    <label class="label">NO</label>
+                                    <div class="control">
+                                        <input class="input" type="number" placeholder="1">
+                                    </div>
+                                </div>
+
+
+                                <label class="label">Picture</label>
+                                <div class="file has-name is-info is-fullwidth is-small" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            400 x 200 Image Only
+                                        </span>
+                                    </label>
+
+
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            400 x 200 Image Only
+                                        </span>
+                                    </label>
+
+
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            400 x 200 Image Only
+                                        </span>
+                                    </label>
+
+
+                                </div>
+                            </div>
+
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Model Selecton
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Generate Model
+                                                    </label>
+                                                    <div class="flextest">
+                                                        <label class="radio">
+                                                            <input type="radio" name="rsvp">
+                                                            Special Model
+                                                        </label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                        </div>
+                                                        <button class="button is-dark">Import</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Service ID
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Default Service ID
+                                        </label>
+
+
+                                        <div class="flextest">
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Follow Service ID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                              align-content: center;
+                              justify-content: center;">
+                <button class="button is-success">Ok</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            CHANNEL BAR MODAL
+    
+    ------------------------------------------------->
+    <div id="modal-ter-cbar" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Channel Bar</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                        justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <!--  -->
+
+
+                            <div class="card-content">
+                                <div class="field">
+                                    <label class="label">NO</label>
+                                    <div class="control">
+                                        <input class="input" type="number" placeholder="1">
+                                    </div>
+                                </div>
+
+
+                                <label class="label">Picture</label>
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Model Selecton
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Generate Model
+                                                    </label>
+                                                    <div class="flextest">
+                                                        <label class="radio">
+                                                            <input type="radio" name="rsvp">
+                                                            Special Model
+                                                        </label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                        </div>
+                                                        <button class="button is-dark">Import</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Service ID
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Default Service ID
+                                        </label>
+
+
+                                        <div class="flextest">
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Follow Service ID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                          align-content: center;
+                          justify-content: center;">
+                <button class="button is-success">Ok</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            VOLUME BAR MODAL
+    
+    ------------------------------------------------->
+    <div id="modal-ter-vbar" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Volume Bar</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                        justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <!--  -->
+
+
+                            <div class="card-content">
+                                <div class="field">
+                                    <label class="label">NO</label>
+                                    <div class="control">
+                                        <input class="input" type="number" placeholder="1">
+                                    </div>
+                                </div>
+
+
+                                <label class="label">Picture</label>
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            1280 x 60 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Model Selecton
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Generate Model
+                                                    </label>
+                                                    <div class="flextest">
+                                                        <label class="radio">
+                                                            <input type="radio" name="rsvp">
+                                                            Special Model
+                                                        </label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                        </div>
+                                                        <button class="button is-dark">Import</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Service ID
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Default Service ID
+                                        </label>
+
+
+                                        <div class="flextest">
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Follow Service ID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                          align-content: center;
+                          justify-content: center;">
+                <button class="button is-success">Ok</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            EPG BAR MODAL
+    
+    ------------------------------------------------->
+    <div id="modal-ter-ebar" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">EPG Bar</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                        justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <!--  -->
+
+
+                            <div class="card-content">
+                                <div class="field">
+                                    <label class="label">NO</label>
+                                    <div class="control">
+                                        <input class="input" type="number" placeholder="1">
+                                    </div>
+                                </div>
+
+
+                                <label class="label">Picture</label>
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            560 x 80 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            560 x 80 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="file has-name is-info is-small is-fullwidth" id="fileupload">
+
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="fileup3">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose a file…
+                                            </span>
+                                        </span>
+                                        <span id="filename" class="file-name">
+                                            560 x 80 Image Only
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="card ">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Model Selecton
+                                    </p>
+
+                                </header>
+                                <div class="card-content ">
+                                    <div class="content ">
+                                        <div class="card is-shadowless">
+                                            <div class="content ">
+                                                <div class="control-ftp">
+                                                    <label class="radio">
+                                                        <input type="radio" name="rsvp">
+                                                        Generate Model
+                                                    </label>
+                                                    <div class="flextest">
+                                                        <label class="radio">
+                                                            <input type="radio" name="rsvp">
+                                                            Special Model
+                                                        </label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" placeholder="">
+                                                        </div>
+                                                        <button class="button is-dark">Import</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Service ID
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Default Service ID
+                                        </label>
+
+
+                                        <div class="flextest">
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Follow Service ID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                          align-content: center;
+                          justify-content: center;">
+                <button class="button is-success">Ok</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR BOOT SCREEN
+    
+    ------------------------------------------------->
+    <div id="modal-ter-parameter-bscreen" class="modal">
+        <div class="modal-background">
+
+        </div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">AD Parameter Settings</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                        justify-content: center; flex: 0 1 auto;">
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Net Parameter
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <div class="flextest">
+                                            <p>Modulation Frequency</p>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                            <p>Net ID</p>
+
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                        </div>
+                                        <div class="flextest">
+                                            <p>Modulation way</p>
+                                            <div class="dropdown">
+                                                <div class="dropdown-trigger">
+                                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                                        <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                            &nbsp; &nbsp;
+                                                            &nbsp;</span>
+                                                        <span class="icon is-small">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="dropdown-menu is-fullwidth" id="dropdown-menu" role="menu">
+                                                    <div class="dropdown-content">
+                                                        <a href="#" class="dropdown-item">
+                                                            Your data here
+                                                        </a>
+                                                        <a class="dropdown-item">
+                                                            Your data here
+                                                        </a>
+                                                        <a href="#" class="dropdown-item">
+                                                            Your data here
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>TS Stream ID</p>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                        </div>
+
+                                        <div class="flextest">
+                                            <p>Symbol Rate</p>
+                                            <div class="control">
+                                                <input class="input" type="text" placeholder="">
+                                            </div>
+                                            <p>Service ID</p>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                        </div>
+                                        <div class="flextest">
+                                            <p>ADStream PID</p>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                &nbsp; AD_Ver
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            &nbsp;Build Describe Table
+                                        </label>
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <label class="radio">
+                                            <input type="radio" name="rsvp">
+                                            Standard PID
+                                        </label>
+                                        <div class="flextest">
+
+                                            <label class="radio">
+                                                <input type="radio" name="rsvp">
+                                                Private PID
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                &nbsp; Table Version
+                                            </label>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="0" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            &nbsp;Build PAT icPMT Table
+                                        </label>
+                                    </p>
+                                </header>
+                                <div class="card-content">
+                                    <div class="control-ftp">
+                                        <div class="flextest">
+                                            <p>PMT PID</p>
+                                            <div class="control">
+                                                <input class="input" type="number" placeholder="" min="1">
+                                            </div>
+                                            <p>Notice: Cannot be zero!</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <p>Operation prompt</p>
+                                <progress class="progress is-success" value="40" max="100"></progress>
+                            </div>
+
+                        </div>
+                        <h1>
+                        </h1>
+                    </div>
+
+                    <div class="flextest">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            AD Service Effective
+                        </label>
+                        <div class="button-group-foot">
+                            <button class="button is-dark " type="submit" style="color: white; ">
+                                Play</button>
+                            <button class="button is-dark" style="color: white; ">
+                                Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR CHANNEL LIST
+    
+    ------------------------------------------------->
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR CHANNEL BAR
+    
+    ------------------------------------------------->
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR VOLUME BAR
+    
+    ------------------------------------------------->
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR EPG BAR
+    
+    ------------------------------------------------->
+
+
+    <!-----------------------------------------------
+        
+        TAB 1(EDIT)
+            SUB-MODAL FOR BOOT SCREEN
+    
+    ------------------------------------------------->
+
+    <!-----------------------------------------------
+        
+        TAB 3(FTP)
+            FTP MODAL
+    
+    ------------------------------------------------->
+
+    <div id="modal-ter-ftp" class="modal">
+        <div class="modal-background">
+
+        </div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">FTP Server</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                        justify-content: center; flex: 0 1 auto;">
+                    <div class="grid-container-ftp">
+                        <div class="top ftp-container">
+                            <div class="ftp-inner" style="margin-right: 250px;">
+                                <ul>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/add-server.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/remove-server.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/edit-server.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_user_close_103746.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_group_full_103572.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_search_103703.png">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="ftp-inner">
+                                <ul>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_globe_103571.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_live-help_326539.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_server_information_103339.png">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main">
+
+                        </div>
+                        <div class="sub ftp-container">
+                            <div class="ftp-inner">
+                                <ul>
+                                    <li>
+                                        <div class="imgcont">
+                                            <img src="images/if_23_Play_106223.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_24_Stop_106221.png">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_controls_play_103458.png">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_controls_stop_103461.png">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_controls_pause_103457.png">
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="ftp-inner">
+                                <ul>
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_user_close_103746 (1).png"> </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_document_text_edit_103514.png"> </div>
+                                    </li>
+                                    <li>
+                                        <div class="imgcont"><img src="images/if_server_103333.png"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="graph">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="modal-card-foot">
+                <div>
+                    <p>footer</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-----------------------------------------------
+        
+        TAB 3(FTP)
+            UDP MODAL
+    
+    ------------------------------------------------->
+
+    <!-- <form>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" placeholder="Your Password">
+                </div>
+            </div>
+            <div class="field">
+                <label class="checkbox">
+            <input type="checkbox">
+            Remember me
+            </label>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+        </form> -->
+
+    <div id="modal-ter-udp" class="modal">
+        <div class="modal-background">
+
+        </div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">UDP Server</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                            justify-content: center; flex: 0 1 auto;">
+                    <div id="grid-container-udp">
+                        <form>
+                            <div class="field is-horizontal">
+                                <div class="field is-horizontal">
+
+                                    <label class="label">Local IP: </label>
+                                    <div class="control">
+                                        <input class="input" type="text">
+                                    </div>
+
+
+                                </div>
+                                <div class="field is-horizontal">
+
+                                    <label class="label">Port: </label>
+                                    <div class="control">
+                                        <input class="input" type="text">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="field">
+                                <label class="label">The TS File: </label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="" disabled>
+                                </div>
+                            </div>
+
+
+
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="field is-horizontal">
+                                        <div class="field is-horizontal">
+
+                                            <label class="label">Destination Address: </label>
+                                            <div class="control">
+                                                <input class="input" type="text">
+                                            </div>
+
+                                        </div>
+                                        <div class="field is-horizontal">
+
+                                            <label class="label">Port: </label>
+                                            <div class="control">
+                                                <input class="input" type="text">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div class="field is-horizontal">
+                                                <div class="field is-horizontal">
+
+                                                    <label class="label">Rating: </label>
+                                                    <div class="control">
+                                                        <input class="input" type="text">
+                                                        (kbps)
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="field is-horizontal">
+
+                                                    <label class="label">TTL: </label>
+                                                    <div class="control">
+                                                        <input class="input" type="text">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-one-third">
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                Limited broadcast
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type="checkbox">
+                                                Add Multicast groud
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column is-one-third">
+                                    <label class="label">Type</label>
+                                    <div class="control" style="display: flex; flex-direction: column">
+                                        <label class="radio">
+                                            <input type="radio" name="answer">
+                                            Unicast
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="answer">
+                                            Broadcast
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="answer">
+                                            IP Cast
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control">
+                                <button type="submit" class="button is-success">Auto Send</button>
+                            </div>
+
+                            <div class="progress-bar">
+
+                                <progress class="progress is-info" value="40" max="100"></progress>
+                            </div>
+
+
+                            <div class="control">
+                                <button type="submit" class="button is-dark">Stop</button>
+                                <button type="submit" class="button is-dark">Close</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="modal-card-foot">
+                <div>
+                    <p>footer</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-ter-checker" class="modal">
+        <div class="modal-background">
+
+        </div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" style="text-align: center;">Select a Device for DVSstation III</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content" style="margin-left: 25px;" style="display: flex; align-items: center;
+                                justify-content: center; flex: 0 1 auto;">
+                    <div class="grid-container-checker">
+                        <div class="top">
+                            <div>
+                                <p>Select a device to use.</p>
+                                <p>Press cancel to keep the current active device</p>
+                                <p>(* = Device currently in use)</p>
+                            </div>
+                        </div>
+                        <div class="col1">
+                            <p>Devices free to use:</p>
+                            <div class="select is-multiple is-fullwidth">
+                                <select multiple size="8">
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            <p>Devices currently in use:</p>
+                            <div class="select is-multiple is-fullwidth">
+                                <select multiple size="8" disabled>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                    <option value="Your Data Here">Your Data Here</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot" style="display: flex;
+                                  align-content: center;
+                                  justify-content: space-around;
+                                  padding: 20px;
+                                  padding-right: 50px;
+                                  padding-left: 50px;">
+                <button class="button is-success is-fullwidth">Ok</button>
+                <button class="button">Cancel</button>
+                <button class="button is-dark">Update List</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <footer class="mainFooter">
+        <div class="footerContainer">
+
+            <img src="images/cignal-small.png">
+
+            <img src="images/support.png">
+        </div>
+    </footer>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <!--bootstrap-->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <!--bulma-->
+    <script src="https://bulma.io/vendor/clipboard-1.7.1.min.js"></script>
+    <script src="https://bulma.io/vendor/js.cookie-2.1.4.min.js"></script>
+    <script src="https://bulma.io/lib/main.js?v=201809051344"></script>
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="js/adscheduling/slider.js"></script>
+    <script src="js/adscheduling/tabs.js"></script>
+    <script src="js/adscheduling/test.js"></script>
+</body>
+
+</html>
